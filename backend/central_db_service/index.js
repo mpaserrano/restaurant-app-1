@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 
 const app = express();
 app.use(express.json());
-
+const MONGO_URI = process.env.MONGODB_URI || "mongodb+srv://dionamite:Dionamite1!@portalformadores.mob88xm.mongodb.net/flor?retryWrites=true&w=majority&appName=PortalFormadores";
 // MongoDB connection using MONGO_URI
-mongoose.connect(, {
+mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {

@@ -14,7 +14,7 @@ function EditCoupon() {
     const { CouponId } = useParams();
 
     useEffect(() => {
-        axios.get(`${url}/discounts/coupons/${CouponId}`).then((response) => {
+        axios.get(`${url}/coupons/${CouponId}`).then((response) => {
             setCoupon(response.data);
             setName(response.data.name)
             setDiscount(response.data.discount)
@@ -63,7 +63,7 @@ function EditCoupon() {
                 if (response.status === 200) {
                     console.log(response.data);
                 }
-                navigate("/discounts/coupons");
+                navigate("/coupons");
             })
             .catch((error) => {
                 console.error(error);

@@ -31,8 +31,6 @@ import EditCampaign from "./pages/Admin/Campaigns/EditCampaign/EditCampaign";
 
 function App() {
 
-  console.log(123081802380)
-
   return (
     <div className="App">
       <div id="main">
@@ -62,7 +60,7 @@ function App() {
             }
           />
           <Route
-            path="/discounts/coupons"
+            path="/coupons"
             element={
               <IsAdmin>
                 <CouponsPageList />
@@ -102,7 +100,7 @@ function App() {
             }
           />
           <Route
-            path="/discounts/campaigns"
+            path="/campaigns"
             element={
               <IsAdmin>
                 <CampaignsPageList />

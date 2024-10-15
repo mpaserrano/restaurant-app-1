@@ -30,7 +30,6 @@ function CreateDietary() {
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response.data);
-                    console.log("Dietary Inserted.");
                     navigate("/dietary");
                 }
             })
@@ -43,7 +42,7 @@ function CreateDietary() {
     return (
         <div className="main">
             <div>
-                <h1>Create Category</h1>
+                <h1>Criar Categoria</h1>
                 <div className="inputwrap">
                     <form onSubmit={ItemhandleSubmit}>
                         <input className="forms mt-4 m-2" type="text" name="name" value={name} placeholder="Nome da Categoria" onChange={handleName} /><br />

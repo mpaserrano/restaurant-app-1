@@ -23,30 +23,32 @@ function DietaryPageList() {
         });
     }
     return (
-        <div>
-            <h1>Dietary List Page</h1>
-            <div className="page-container">
-                <table className="centered-table">
-                    <thead>
-                        <tr>
-                            <th>Categorias</th>
-                            <th className="w-[300px]">Descricação</th>
-                            <th colSpan="2">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {dietaries.map((dietary) => (
-                            <tr key={dietary._id}>
-                                <td><Dietary dietary={dietary} /></td>
-                                <td>{dietary.description}</td>
-                                <td><Link to={`/editDietary/${dietary._id}`}><button className="button-acoes-edit"><FaPen /></button></Link></td>
-                                <td><button className="button-acoes-delete" onClick={() => deleteItem(dietary._id)}><FaTrashCan /></button></td>
+        <div className="main">
+            <div>
+                <h1>Categorias</h1>
+                <div className="page-container">
+                    <table className="centered-table">
+                        <thead>
+                            <tr>
+                                <th>Categorias</th>
+                                <th className="w-[300px]">Descricação</th>
+                                <th colSpan="2">Ações</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {dietaries.map((dietary) => (
+                                <tr key={dietary._id}>
+                                    <td><Dietary dietary={dietary} /></td>
+                                    <td>{dietary.description}</td>
+                                    <td><Link to={`/editDietary/${dietary._id}`}><button className="button-acoes-edit"><FaPen /></button></Link></td>
+                                    <td><button className="button-acoes-delete" onClick={() => deleteItem(dietary._id)}><FaTrashCan /></button></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div >
+        </div>
     );
 }
 

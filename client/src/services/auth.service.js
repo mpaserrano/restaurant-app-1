@@ -3,7 +3,6 @@ import axios from "axios";
 class AuthService {
   constructor() {
 
-    console.log(import.meta.env.VITE_SERVER_URL, "x")
     this.api = axios.create({
       baseURL: import.meta.env.VITE_SERVER_URL || "http://localhost:80",
     });

@@ -15,8 +15,6 @@ function LoginPage() {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  console.log("caragooo")
-
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { email, password };
@@ -26,8 +24,6 @@ function LoginPage() {
     axios.post(`${import.meta.env.VITE_SERVER_URL}/auth/login`)
       .then((response) => {})
     */
-
-    console.log("aaaaa")
 
     // Or using a service
     authService

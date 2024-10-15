@@ -44,12 +44,12 @@ function CreateCoupon() {
         const requestBody = { name, start, end, discount };
 
         axios
-            .post(`${url}/discounts/coupons`, requestBody)
+            .post(`${url}/coupons`, requestBody)
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response.data);
                     console.log("Coupon Inserted.");
-                    navigate("/discounts/coupons");
+                    navigate("/coupons");
                 }
             })
             .catch((error) => {

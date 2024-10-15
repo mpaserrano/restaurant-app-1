@@ -58,7 +58,7 @@ function EditCampaign() {
                 if (response.status === 200) {
                     console.log(response.data);
                 }
-                navigate("/discounts/campaigns");
+                navigate("/campaigns");
             })
             .catch((error) => {
                 console.error(error);
@@ -83,7 +83,7 @@ function EditCampaign() {
                         <p>Data de Expiração</p>
                         <input className="forms m-2" type="date" name="end" value={end} onChange={handleEnd} /><br />
                         {errorMessage && <p className="error-message">{errorMessage}</p>}
-                        <button className="button m-2" type="submit">Edit Campanha</button><Link to={`/discounts/campaigns`}>
+                        <button className="button m-2" type="submit">Edit Campanha</button><Link to={`/campaigns`}>
                             <button className="button cancel m-2">Cancelar</button></Link>
                     </form>
                 </div>

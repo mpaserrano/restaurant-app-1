@@ -44,7 +44,7 @@ function CreateCampaign() {
                 if (response.status === 200) {
                     console.log(response.data);
                     console.log("Coupon Inserted.");
-                    navigate("/campaign");
+                    navigate("/campaigns");
                 }
             })
             .catch((error) => {
@@ -57,7 +57,7 @@ function CreateCampaign() {
     return (
         <div className="main">
             <div>
-                <h1>Create Campaign</h1>
+                <h1>Criar Campanhas</h1>
                 <div className="inputwrap">
                     <form onSubmit={handleSubmit}>
 

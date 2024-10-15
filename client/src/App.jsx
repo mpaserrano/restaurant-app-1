@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
+
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
@@ -29,6 +30,9 @@ import CampaignsPageList from "./pages/Admin/Campaigns/CampaignsPageList/Campaig
 import EditCampaign from "./pages/Admin/Campaigns/EditCampaign/EditCampaign";
 
 function App() {
+
+  console.log(123081802380)
+
   return (
     <div className="App">
       <div id="main">

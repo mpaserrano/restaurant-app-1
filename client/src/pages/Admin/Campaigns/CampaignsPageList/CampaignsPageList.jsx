@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaTrashCan } from "react-icons/fa6"
 import { FaPen } from "react-icons/fa6"
 
-const url = process.env.VITE_SERVER_URL || "http://localhost:80"
+const url = import.meta.env.VITE_SERVER_URL || "http://localhost:80"
 
 function CampaignsPageList() {
     const [campaigns, setCampaigns] = useState([]);

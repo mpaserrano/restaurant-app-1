@@ -11,14 +11,14 @@ function CouponPageList() {
     const [coupons, setCoupons] = useState([]);
 
     useEffect(() => {
-        axios.get(`${url}/coupons`).then((response) => {
+        axios.get(`${url}/discounts/coupons`).then((response) => {
             setCoupons(response.data);
             console.log(response.data)
         });
     }, []);
 
     function deleteItem(id) {
-        axios.delete(`${url}/coupons/${id}`).then((response) => {
+        axios.delete(`${url}/discounts/coupons/${id}`).then((response) => {
             setCoupons((prevItems) => prevItems.filter((coupon) => coupon._id !== id));
         });
     }

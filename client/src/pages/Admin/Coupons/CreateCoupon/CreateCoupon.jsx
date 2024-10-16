@@ -44,7 +44,7 @@ function CreateCoupon() {
         const requestBody = { name, start, end, discount };
 
         axios
-            .post(`${url}/coupons`, requestBody)
+            .post(`${url}/discounts/coupons`, requestBody)
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response.data);

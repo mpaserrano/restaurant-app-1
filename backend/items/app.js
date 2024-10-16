@@ -19,12 +19,12 @@ app.use(cors({
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
-app.get("/api/items", (req, res, next) => {
+app.get("/api/check", (req, res, next) => {
     res.json("Items Server UP!");
 });
 
 const itemsRoutes = require("./routes/items.routes");
-app.use("/api/items/items", itemsRoutes);
+app.use("/api/items/", itemsRoutes);
 
 const DietaryRoutes = require("./routes/dietary.routes");
 app.use("/api/items/dietary", DietaryRoutes);

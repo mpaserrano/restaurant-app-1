@@ -21,29 +21,29 @@ require("./config")(app);
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
-app.use("/api/api", indexRoutes);
+app.use("/api", indexRoutes);
 
 const authRoutes = require("./routes/auth.routes");
-app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes);
 
 const itemsRoutes = require("./routes/items.routes");
-app.use("/api/items", itemsRoutes);
+app.use("/items", itemsRoutes);
 
 const UsersRoutes = require("./routes/users.routes");
-app.use("/api/users", UsersRoutes);
+app.use("/users", UsersRoutes);
 
 
 const CouponRoutes = require("./routes/coupons.routes");
-app.use("/api/coupons", CouponRoutes);
+app.use("/coupons", CouponRoutes);
 
 const CampaignRoutes = require("./routes/campaigns.routes");
-app.use("/api/campaign", CampaignRoutes);
+app.use("/campaign", CampaignRoutes);
 
 const DietaryRoutes = require("./routes/dietary.routes");
-app.use("/api/dietary", DietaryRoutes);
+app.use("/dietary", DietaryRoutes);
 
 const OrdersRoutes = require("./routes/orders.routes");
-app.use("/api/orders", OrdersRoutes);
+app.use("/orders", OrdersRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

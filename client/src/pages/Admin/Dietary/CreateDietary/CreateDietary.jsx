@@ -26,7 +26,7 @@ function CreateDietary() {
         const requestBody = { name, description };
 
         axios
-            .post(`${url}/dietary`, requestBody)
+            .post(`${url}/items/dietary`, requestBody)
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response.data);

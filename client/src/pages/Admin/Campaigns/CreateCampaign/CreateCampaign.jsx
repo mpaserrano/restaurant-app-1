@@ -39,7 +39,7 @@ function CreateCampaign() {
         const requestBody = { name, start, end, description };
 
         axios
-            .post(`${url}/campaign`, requestBody)
+            .post(`${url}/discounts/campaign`, requestBody)
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response.data);

@@ -11,14 +11,14 @@ function DietaryPageList() {
     const [dietaries, setDietary] = useState([]);
 
     useEffect(() => {
-        axios.get(`${url}/dietary`).then((response) => {
+        axios.get(`${url}/items/dietary`).then((response) => {
             setDietary(response.data);
             console.log(response.data)
         });
     }, []);
 
     function deleteItem(id) {
-        axios.delete(`${url}/dietary/${id}`).then((response) => {
+        axios.delete(`${url}/items/dietary/${id}`).then((response) => {
             setDietary((prevItems) => prevItems.filter((dietary) => dietary._id !== id));
         });
     }

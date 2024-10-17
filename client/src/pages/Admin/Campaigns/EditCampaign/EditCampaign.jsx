@@ -53,7 +53,7 @@ function EditCampaign() {
         const requestBody = { _id, name, start, end, description };
 
         axios
-            .put(`${url}/campaign/${campaign._id}`, requestBody)
+            .put(`${url}/discounts/campaign/${campaign._id}`, requestBody)
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response.data);

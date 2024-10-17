@@ -11,14 +11,14 @@ function CampaignsPageList() {
     const [campaigns, setCampaigns] = useState([]);
 
     useEffect(() => {
-        axios.get(`${url}/campaign`).then((response) => {
+        axios.get(`${url}/discounts/campaign`).then((response) => {
             setCampaigns(response.data);
             console.log(response.data)
         });
     }, []);
 
     function deleteItem(id) {
-        axios.delete(`${url}/campaign/${id}`).then((response) => {
+        axios.delete(`${url}/discounts/campaign/${id}`).then((response) => {
             setCampaigns((prevItems) => prevItems.filter((campaign) => campaign._id !== id));
         });
     }

@@ -14,7 +14,7 @@ function EditCoupon() {
     const { CouponId } = useParams();
 
     useEffect(() => {
-        axios.get(`${url}/coupons/${CouponId}`).then((response) => {
+        axios.get(`${url}/discounts/coupons/${CouponId}`).then((response) => {
             setCoupon(response.data);
             setName(response.data.name)
             setDiscount(response.data.discount)

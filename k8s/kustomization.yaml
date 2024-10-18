@@ -1,0 +1,6 @@
+resources:
+  - backend-dpl.yaml
+  - backend-svc.yaml
+  - frontend-dpl.yaml
+  - frontend-svc.yaml
+  - ingress-controller.yaml

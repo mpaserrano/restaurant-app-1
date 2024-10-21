@@ -1,0 +1,38 @@
+services:
+  database:
+    image: postgres:latest
+    container_name: db-container
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: restaurant-db
+    ports:
+      - "5432:5432"
+
+  backend:
+    container_name: backend-container
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      SECRET: MySecret1!
+      DATABASE_URL: "postgres://admin:admin@database:5432/restaurant-db"
+      CLOUD_NAME: "drsjloigq"
+      CLOUD_API_KEY: "926793658896175"
+      CLOUD_API_SECRET: "5QhoDhOiODpETRSYUrRYDzu5tv0"
+      PORT: 6001
+    ports:
+      - "6001:6001"
+    depends_on:
+      - database
+
+  frontend:
+    container_name: frontend-container
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    environment:
+      VITE_SERVER_URL: "http://backend:6001"
+    ports:
+      - "80:80"
+

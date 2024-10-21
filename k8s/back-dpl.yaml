@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: pablop115/p2-backend
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 6001
+        env:
+        - name: SECRET
+          value: "MySecret1!"
+        - name: DATABASE_URL
+          value: "postgresql://admin:admin@database-service:5432/restaurant-db"
+        - name: PORT
+          value: "6001"
+        - name: CLOUD_NAME
+          value: "drsjloigq"
+        - name: CLOUD_API_KEY
+          value: "926793658896175"
+        - name: CLOUD_API_SECRET
+          value: "5QhoDhOiODpETRSYUrRYDzu5tv0"

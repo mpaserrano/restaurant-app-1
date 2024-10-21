@@ -1,0 +1,7 @@
+resources:
+  - db-dpl.yaml
+  - client-dpl.yaml
+  - back-dpl.yaml
+  - db-service.yaml
+  - client-service.yaml
+  - back-service.yaml

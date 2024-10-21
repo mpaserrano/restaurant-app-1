@@ -4,6 +4,9 @@ COPY . .
 
 RUN npm install
 
+ARG VITE_SERVER_URL
+ENV VITE_SERVER_URL=${VITE_SERVER_URL}
+
 RUN npm run build
 
 #############################################

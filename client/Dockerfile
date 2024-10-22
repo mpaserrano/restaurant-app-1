@@ -4,7 +4,7 @@ COPY . .
 
 RUN npm install
 
-ENV VITE_SERVER_URL=http://10.108.141.208
+ENV VITE_SERVER_URL=http://10.108.216.87
 
 RUN npm run build
 

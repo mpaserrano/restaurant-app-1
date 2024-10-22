@@ -1,4 +1,6 @@
 resources:
+  - db-pv.yaml
+  - db-pvc.yaml
   - db-dpl.yaml
   - client-dpl.yaml
   - db-service.yaml

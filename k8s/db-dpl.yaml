@@ -28,3 +28,10 @@ spec:
           value: restaurant-db
         ports:
         - containerPort: 5432
+        volumeMounts:  # This should be within the container spec
+        - mountPath: /var/lib/postgresql/data  # Path inside the container
+          name: db-storage  # Name of the volume to mount
+      volumes:  # This should be at the same level as containers
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: db-pvc  # Reference to your PVC

@@ -67,7 +67,8 @@ echo "............ BUILDING ............"
 cd $script_dir/k8s
 
 echo "creating database . . . "
-
+kubectl apply -f db-pv.yaml
+kubectl apply -f db-pvc.yaml
 kubectl apply -f db-dpl.yaml
 
 echo "setting up database . . . "

@@ -28,10 +28,22 @@ spec:
           value: restaurant-db
         ports:
         - containerPort: 5432
-        volumeMounts:  # This should be within the container spec
+        readinessProbe:
+          exec:
+            command:
+            - psql
+            - -U
+            - admin
+            - -d
+            - restaurant-db
+            - -c
+            - "SELECT 1;"
+          initialDelaySeconds: 3
+          periodSeconds: 1
+        volumeMounts:
         - mountPath: /var/lib/postgresql/data  # Path inside the container
-          name: db-storage  # Name of the volume to mount
-      volumes:  # This should be at the same level as containers
-      - name: db-storage
+          name: efs-storage
+      volumes:
+      - name: efs-storage
         persistentVolumeClaim:
-          claimName: db-pvc  # Reference to your PVC
+          claimName: efs-pvc

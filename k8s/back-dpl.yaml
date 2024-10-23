@@ -12,6 +12,10 @@ spec:
       labels:
         app: backend
     spec:
+      initContainers:
+      - name: wait-for-db
+        image: busybox
+        command: ['sh', '-c', 'until nc -z database-service 5432; do echo waiting for database-service; sleep 1; done']
       containers:
       - name: backend
         image: pablop115/p2-backend

@@ -4,7 +4,7 @@ COPY . .
 
 RUN npm install
 
-ENV VITE_SERVER_URL=http://a9b8bb81c66044a979f6da9062aad305-52582312.eu-west-3.elb.amazonaws.com
+ENV VITE_SERVER_URL=http://ab4850d2aecaa4afdb0e5df61392e6dd-1016574668.eu-west-3.elb.amazonaws.com
 
 RUN npm run build
 

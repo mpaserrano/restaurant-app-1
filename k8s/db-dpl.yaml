@@ -40,10 +40,10 @@ spec:
             - "SELECT 1;"
           initialDelaySeconds: 10
           periodSeconds: 1
-        volumeMounts:
+        volumeMounts:  # This should be within the container spec
         - mountPath: /var/lib/postgresql/data  # Path inside the container
-          name: efs-storage
-      volumes:
-      - name: efs-storage
+          name: db-storage  # Name of the volume to mount
+      volumes:  # This should be at the same level as containers
+      - name: db-storage
         persistentVolumeClaim:
-          claimName: efs-pvc
+          claimName: db-pvc  # Reference to your PVC

@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - monolithic-postgres
+  pull_request:
+    branches:
+      - main
 
 jobs:
   run-vite:

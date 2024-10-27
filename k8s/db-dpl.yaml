@@ -38,7 +38,7 @@ spec:
             - restaurant-db
             - -c
             - "SELECT 1;"
-          initialDelaySeconds: 3
+          initialDelaySeconds: 10
           periodSeconds: 1
         volumeMounts:
         - mountPath: /var/lib/postgresql/data  # Path inside the container

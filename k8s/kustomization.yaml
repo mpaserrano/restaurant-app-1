@@ -1,4 +1,5 @@
 resources:
+  - efs-sc.yaml
   - db-pv.yaml
   - db-pvc.yaml
   - db-dpl.yaml

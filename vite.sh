@@ -4,6 +4,9 @@ script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $script_dir/k8s
 
 kubectl delete all --all
+kubectl delete ingress --all
+kubectl delete pvc --all
+kubectl delete pv --all
 
 kubectl apply -f back-service.yaml
 kubectl apply -f client-service.yaml
@@ -38,7 +41,7 @@ COPY . .
 
 RUN npm install
 
-ENV VITE_SERVER_URL=http://$(kubectl get svc $BACKEND_SERVICE_NAME -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+ENV VITE_SERVER_URL=$BACKEND_EXTERNAL_IP
 
 RUN npm run build
 

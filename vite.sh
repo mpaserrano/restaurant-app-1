@@ -41,7 +41,7 @@ COPY . .
 
 RUN npm install
 
-ENV VITE_SERVER_URL=$BACKEND_EXTERNAL_IP
+ENV VITE_SERVER_URL=$(kubectl get svc $BACKEND_SERVICE_NAME -o jsonpath='{.spec.clusterIP}')
 
 RUN npm run build
 
